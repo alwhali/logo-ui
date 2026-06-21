@@ -16,118 +16,121 @@ class LoginScreen extends StatelessWidget {
     return Stack(
       children: [
         Scaffold(
+          resizeToAvoidBottomInset: true,
           backgroundColor: Colors.white,
-          appBar: AppBar(),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Center(
-              child: Column(
-                children: [
-                  SizedBox(height: 70),
-                  LogoText(),
-                  SizedBox(height: 10),
-                  Text(
-                    "Welcome Back",
-                    style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 24,
+          appBar: AppBar(backgroundColor: Colors.white),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Center(
+                child: Column(
+                  children: [
+                    SizedBox(height: 70),
+                    LogoText(),
+                    SizedBox(height: 10),
+                    Text(
+                      "Welcome Back",
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 24,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    "Login to existing LOGO account",
-                    style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
+                    SizedBox(height: 10),
+                    Text(
+                      "Login to existing LOGO account",
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 40),
-                  MyTextField(
-                    hintText: "User Name",
-                    icon: Icon(Icons.person_2_outlined),
-                  ),
-                  SizedBox(height: 20),
-                  MyTextField(
-                    hintText: "Password",
-                    icon: Icon(Icons.lock_outline),
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                        onTap: () {},
-                        child: Text(
-                          "Forgot Password?",
+                    SizedBox(height: 40),
+                    MyTextField(
+                      hintText: "User Name",
+                      icon: Icon(Icons.person_2_outlined),
+                    ),
+                    SizedBox(height: 20),
+                    MyTextField(
+                      hintText: "Password",
+                      icon: Icon(Icons.lock_outline),
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            "Forgot Password?",
+                            style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 30),
+                    MYButton(text: "Login", onTap: () {}),
+                    SizedBox(height: 30),
+                    Text(
+                      'Or Sign Up with',
+                      style: GoogleFonts.roboto(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 15,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GestureDetector(
+                          onTap: () {},
+                          child: SvgPicture.asset("assets/images/facebook.svg"),
+                        ),
+                        SizedBox(width: 20),
+                        GestureDetector(
+                          onTap: () {},
+                          child: SvgPicture.asset("assets/images/google.svg"),
+                        ),
+                        SizedBox(width: 20),
+                        GestureDetector(
+                          onTap: () {},
+                          child: SvgPicture.asset("assets/images/apple.svg"),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 30),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don't have an account?",
                           style: GoogleFonts.roboto(
                             fontWeight: FontWeight.w400,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 30),
-                  MYButton(text: "Login", onTap: () {}),
-                  SizedBox(height: 30),
-                  Text(
-                    'Or Sign Up with',
-                    style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () {},
-                        child: SvgPicture.asset("assets/images/facebook.svg"),
-                      ),
-                      SizedBox(width: 20),
-                      GestureDetector(
-                        onTap: () {},
-                        child: SvgPicture.asset("assets/images/google.svg"),
-                      ),
-                      SizedBox(width: 20),
-                      GestureDetector(
-                        onTap: () {},
-                        child: SvgPicture.asset("assets/images/apple.svg"),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 30),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Don't have an account?",
-                        style: GoogleFonts.roboto(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      GestureDetector(
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => RegisterScreen(),
-                          ),
-                        ),
-                        child: Text(
-                          'Sign Up',
-                          style: GoogleFonts.roboto(
-                            fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        SizedBox(width: 5),
+                        GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RegisterScreen(),
+                            ),
+                          ),
+                          child: Text(
+                            'Sign Up',
+                            style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
